@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class
+{
+    internal class Library
+    {
+        public Book[] books=new Book[0];
+
+
+        public void AddBook(Book book)
+        {
+            Array.Resize(ref books, books.Length + 1);
+            books[books.Length-1] = book;   
+        }
+        public Book[] GetFilteredBooks(string genre)
+        {
+           Book[] allbooks = new Book[0];
+            for(int i = 0; i < books.Length; i++)
+            {
+                if (books[i].Genre == genre)
+                {
+                    Array.Resize(ref allbooks, allbooks.Length + 1);
+                    allbooks[allbooks.Length-1] = books[i];
+                }
+            }
+            return allbooks;
+        }
+        public Book[] GetFilteredBooks(int minprice,int maxprice)
+        {
+            Book[] allbooks = new Book[0];
+            for (int i = 0; i < books.Length; i++)
+            {
+                if (books[i].Price< maxprice && books[i].Price>minprice)
+                {
+                    Array.Resize(ref allbooks, allbooks.Length + 1);
+                    allbooks[allbooks.Length - 1] = books[i];
+                }
+            }
+            return allbooks;
+        }
+
+
+
+
+    }
+}
