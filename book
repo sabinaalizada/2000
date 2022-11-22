@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class
+{
+    internal class Book:Product
+    {
+        public string Genre;
+
+        public Book(int No, string name, int price,int count,string genre) :base(No,name,price,count)   
+        {
+            this.Genre = genre;
+        }
+    }
+}
