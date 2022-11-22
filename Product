@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Class
+{
+    internal class Product
+    {
+        public int No;
+        public string name;
+        private int _price;
+        private int _count;
+        public int Price { 
+            get { return _price; } 
+            set 
+            { 
+                if(value>0 && value < 50)
+                {
+                    _price = value;
+                }
+            }
+            
+        }
+        public int Count
+        {
+            get { return _count; }
+            set
+            {
+                if (value > 0 && value < 10)
+                {
+                    _count = value;
+                }
+            }
+
+        }
+        public Product(int No,string name,int price,int count)
+        {
+            this.No = No;
+            this.name = name;   
+            this._price = price;
+            this.Count = count;
+        }
+
+    }
+}
